@@ -40,7 +40,7 @@
 
 {#if isVisible}
   <nav
-    class="fixed md:block top-5 left-1/2 -translate-x-1/2 border border-zinc-700 bg-zinc-900/80 backdrop-blur-sm p-4 rounded-3xl min-w-md max-w-lg shadow-lg z-99 transition-opacity duration-300"
+    class="fixed hidden md:block top-5 left-1/2 -translate-x-1/2 border border-zinc-700 bg-zinc-900/80 backdrop-blur-sm p-4 rounded-3xl min-w-md max-w-lg shadow-lg z-99 transition-opacity duration-300"
     transition:fade
   >
     <ul class="flex justify-center gap-x-6">
