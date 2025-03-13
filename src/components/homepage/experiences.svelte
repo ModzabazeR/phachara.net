@@ -1,75 +1,50 @@
 <script lang="ts">
-  import { sortCards } from "$lib/utils/components";
-  import type { Card } from "../../app";
+  import { experiences } from "$lib/data/homepage";
   import ExperienceCard from "./experience-card.svelte";
+  import { onMount } from "svelte";
 
-  const experiences: Card[] = [
-    {
-      title: "Co-Project Manager",
-      description:
-        "Manage projects at Science KMITL Digital Transformation Team",
-      year: "2024 - Present",
-      href: "",
-      tags: ["Project Management", "Web Development"],
-      image: "",
-    },
-    {
-      title: "Coordinator & Speaker",
-      description: "CS KMITL Hacklab, a cybersecurity passion group",
-      year: "2024 - Present",
-      href: "",
-      tags: ["Cybersecurity", "Knowledge Sharing", "CTF"],
-      image: "",
-    },
-    {
-      title: "Head of Web Development",
-      description: "Lead the Web Development team for KMITL CS Camp 16",
-      year: "2023",
-      href: "",
-      tags: ["Next.js", "Tailwind CSS", "Express.js", "MySQL"],
-      image: "",
-    },
-    {
-      title: "ISAG CTF 2025",
-      description:
-        "Competed in the KMITL’s ISAG CTF 2025, and achieved 6th place out of 20 teams.",
-      year: "2025",
-      href: "",
-      tags: ["Cybersecurity", "CTF"],
-      image: "",
-    },
-    {
-      title: "STDiO CTF 2024",
-      description:
-        "Advanced to the final round of the 2600TH STDiO CTF 2024, securing 8th place out of 20 teams.",
-      year: "2024",
-      href: "",
-      tags: ["Cybersecurity", "CTF"],
-      image: "",
-    },
-    {
-      title: "Developer & Content Creator",
-      description:
-        "Developed and created content for Hareshi, a one-stop platform for legal anime streaming in Thailand",
-      year: "2019 - Present",
-      href: "",
-      tags: ["Web Development", "Content Creation"],
-      image: "",
-    },
-  ].sort(sortCards);
+  let matchesMediaQuery = false;
+
+  onMount(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    matchesMediaQuery = mediaQuery.matches;
+
+    mediaQuery.addEventListener("change", (e) => {
+      matchesMediaQuery = e.matches;
+    });
+  });
 </script>
 
 <section
   id="experiences"
-  class="min-h-dvh flex flex-col md:flex-col-reverse gap-y-4 md:gap-y-6 lg:gap-y-8 justify-center items-center relative py-16 px-8"
+  class="min-h-dvh flex flex-col gap-y-4 md:gap-y-6 lg:gap-y-8 justify-center items-center relative py-16 px-8"
 >
-  <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold md:text-right w-full">
-    Experiences
-  </h2>
-  <div class="w-full h-[70%]">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-      {#each experiences as experience}
-        <ExperienceCard {...experience} />
+  <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold w-full">Experiences</h2>
+  <div class="w-full relative">
+    <!-- Timeline line -->
+    <div
+      class="absolute left-4 md:left-1/2 h-full w-0.5 bg-zinc-700 -translate-x-1/2"
+    ></div>
+
+    <div class="flex flex-col gap-8">
+      {#each experiences as experience, i}
+        <div
+          class="flex items-start md:items-center relative {i % 2 === 0
+            ? 'md:flex-row'
+            : 'md:flex-row-reverse'}"
+        >
+          <!-- Timeline dot -->
+          <div
+            class="absolute left-4 md:left-1/2 -translate-x-1/2 mt-6 md:mt-0"
+          >
+            <div class="h-4 w-4 rounded-full bg-zinc-700"></div>
+          </div>
+
+          <!-- Card container -->
+          <div class="w-[calc(100%-3rem)] md:w-[45%] ml-12 md:ml-0">
+            <ExperienceCard {...experience} />
+          </div>
+        </div>
       {/each}
     </div>
   </div>
