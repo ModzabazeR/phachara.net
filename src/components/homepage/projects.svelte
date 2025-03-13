@@ -11,7 +11,7 @@
     <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold">Projects</h2>
     <p class="text-sm text-gray-400 italic">since 2018</p>
   </div>
-  <div class="w-full h-[70%]">
+  <div class="w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
       {#each projects as project}
         <ProjectCard {...project} />

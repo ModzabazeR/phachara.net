@@ -77,9 +77,8 @@ export const projects: Card[] = [
   },
   {
     title: "Document Management System",
-    subtitle: "Nova Organic Co., Ltd.",
     description:
-      "A web application that digitizes analog documents, enabling seamless transition to a digital platform. It supports various document types, each with distinct editing and approval workflows.",
+      "An internal web for Nova Organic Co., Ltd. A web application that digitizes analog documents, enabling seamless transition to a digital platform. It supports various document types, each with distinct editing and approval workflows.",
     year: "2025",
     href: "",
     tags: ["Next.js", "Tailwind CSS", "Elysia.js", "PostgreSQL"],
@@ -133,7 +132,7 @@ export const projects: Card[] = [
   {
     title: "DocJuice",
     description:
-      "An application that helps you do accounting tasks easily as drinking the juice. The project from CP ALL CAI Camp 2019",
+      "An application that helps you do accounting tasks easily as drinking the juice. The project from CP ALL CAI Camp 2021",
     year: "2021",
     href: "",
     tags: ["Python", "Qt5", "RegEx", "Google Cloud"],
