@@ -1,15 +1,9 @@
 {
   "name": "phachara.net",
   "version": "0.0.1",
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-  },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
+    "@iconify/svelte": "^4.2.0",
     "@neoconfetti/svelte": "^1.0.0",
     "@sveltejs/adapter-auto": "^3.3.1",
     "@sveltejs/kit": "^2.19.0",
@@ -17,11 +11,19 @@
     "@tailwindcss/postcss": "^4.0.13",
     "postcss": "^8.5.3",
     "svelte": "^5.23.0",
+    "svelte-carousel": "^1.0.25",
     "svelte-check": "^4.1.5",
     "tailwindcss": "^4.0.13",
     "tslib": "^2.8.1",
     "typescript": "^5.8.2",
     "vite": "^5.4.14"
+  },
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "type": "module"
 }
